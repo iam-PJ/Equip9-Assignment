@@ -2,24 +2,6 @@
 
 This project demonstrates how to create an HTTP service using Python and Flask, which lists the contents of an AWS S3 bucket. Additionally, it provisions the necessary infrastructure and deploys the service on an EC2 instance using Terraform.
 
-## Table of Contents
-
-1. [Project Overview](#project-overview)
-2. [Prerequisites](#prerequisites)
-3. [Part 1: HTTP Service](#part-1-http-service)
-    - [Setting Up the Environment](#setting-up-the-environment)
-    - [Writing the Application](#writing-the-application)
-    - [Running the Application](#running-the-application)
-    - [Testing the API](#testing-the-api)
-4. [Part 2: Terraform Deployment](#part-2-terraform-deployment)
-    - [Installing Terraform](#installing-terraform)
-    - [Configuring Terraform Project](#configuring-terraform-project)
-    - [Deploying the Infrastructure](#deploying-the-infrastructure)
-    - [Testing the Deployment](#testing-the-deployment)
-5. [Securing the Service with HTTPS](#securing-the-service-with-https)
-6. [Clean Up](#clean-up)
-7. [Deliverables](#deliverables)
-8. [Conclusion](#conclusion)
 
 ## Project Overview
 
@@ -72,12 +54,17 @@ Running the Application
 
 Once the application is written, run the Flask app using the following command:
 
-python3 app.py
+python3 newcode.py
 
 Testing the API
 
     Test using Postman or curl:
         Get top-level content:
+
+
+![Postman Images](PostmanImg.png)
+![Postman Images](PostmanImg2.png)
+
 
 curl http://<EC2-IP>:5000/list-bucket-content
 
