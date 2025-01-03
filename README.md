@@ -49,3 +49,62 @@ This project involves two main parts:
    sudo yum install python3-pip -y
    python3 --version
    pip3 --version
+3.Install necessary Python packages:
+
+pip3 install flask boto3
+
+Configure AWS CLI:
+
+    aws configure
+
+    Enter your AWS credentials and region details.
+
+Writing the Application
+
+    Create a project directory:
+
+    mkdir aws_http_service
+    cd aws_http_service
+
+    Create the main application file (app.py): In this file, you'll write the Python Flask application to interact with S3 and return the contents of the bucket or a specified directory.
+
+Running the Application
+
+Once the application is written, run the Flask app using the following command:
+
+python3 app.py
+
+Testing the API
+
+    Test using Postman or curl:
+        Get top-level content:
+
+curl http://<EC2-IP>:5000/list-bucket-content
+
+Get content of a specific directory:
+
+        curl http://<EC2-IP>:5000/list-bucket-content/dir1
+
+Part 2: Terraform Deployment
+Installing Terraform
+
+    Install Terraform:
+
+    sudo yum update -y
+    wget https://releases.hashicorp.com/terraform/1.x.x/terraform_1.x.x_linux_amd64.zip
+    unzip terraform_1.x.x_linux_amd64.zip
+    sudo mv terraform /usr/local/bin/
+    terraform --version
+
+Configuring Terraform Project
+
+    Create a Terraform project directory:
+
+mkdir terraform-deployment
+cd terraform-deployment
+
+Create the following files:
+
+    main.tf: Defines the AWS resources, including the EC2 instance and security groups.
+    variables.tf: Input variables used in the configuration.
+    outputs.tf: Output values, such as the public IP address of the EC2 instance.
