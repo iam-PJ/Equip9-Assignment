@@ -48,7 +48,7 @@ Writing the Application
     mkdir aws_http_service
     cd aws_http_service
 
-    Create the main application file (app.py): In this file, you'll write the Python Flask application to interact with S3 and return the contents of the bucket or a specified directory.
+    Create the main application file (newcode.py): In this file, you'll write the Python Flask application to interact with S3 and return the contents of the bucket or a specified directory.
 
 Running the Application
 
@@ -61,16 +61,18 @@ Testing the API
     Test using Postman or curl:
         Get top-level content:
 
+Get content of a s3 Bucket:
 
+        curl http://<EC2-IP>:5000/list-bucket-content/
 ![Postman Images](PostmanImg.png)
-![Postman Images](PostmanImg2.png)
-
-
-curl http://<EC2-IP>:5000/list-bucket-content
 
 Get content of a specific directory:
 
         curl http://<EC2-IP>:5000/list-bucket-content/dir1
+![Postman Images](PostmanImg2.png)
+
+
+curl http://<EC2-IP>:5000/list-bucket-content
 
 Part 2: Terraform Deployment
 Installing Terraform
